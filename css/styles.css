@@ -1,0 +1,150 @@
+h1 {
+  text-align: center;
+  /* line-height: 100px; */
+  height: 100px;
+  width: 100%;
+  line-height: 2;
+}
+form {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+}
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: start;
+}
+input[type="text"] {
+  margin-right: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.btn-assessment {
+  margin: 0 auto;
+  min-width: 200px;
+  border-radius: 5px;
+  display: inline;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a,
+.dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.info-container {
+  position: relative;
+  display: inline-block;
+}
+
+.info-card {
+  position: absolute;
+  top: 100%;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 500px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
+}
+
+.info-container:hover .info-card {
+  display: block;
+}
+
+#summary {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+canvas {
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+
+.bigArea{
+  height: 300px; 
+  width: 100%;
+  margin-bottom: 10px;
+}
+
