@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hypertension</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css\styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #add8e6;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> -->
+        <li>
+          <ul>
+            <li><a href="diabetes.html">Diabetes Follow Up</a></li>
+            <li><a href="asthmaFollowUp.html">Asthma Follow Up</a></li>
+            <li><a href="hypertension.html">HTN Follow Up</a></li>
+            <li><a href="ams.html">AMS</a></li>
+            <li><a href="pain.html">Pain Clinic</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <p></p>
+    <h1>Hypertension Clinical Clerking Format</h1>
+    <form id="clerking-form">
+      <label for="comorbidity">Comorbidity:</label>
+      <textarea id="comorbidity" name="comorbidity" rows="3"></textarea>
+
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 60%">Compliance to treatment:</th>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="1" name="compliance" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="compliance" value="No" /> No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="width: 60%">Home BP Monitoring:</th>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="38" name="hbpm" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="hbpm" value="No" /> No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="width: 30%" for="hba1c">
+            Average Home BP:
+            <div class="info-container"></div>
+          </th>
+
+          <td style="width: 40%">
+            <input type="text" id="hbpmValue" name="hbpmValue" />
+          </td>
+        </tr>
+      </table>
+
+      <br />
+
+      <label for="tod">Symptoms of TOD/TOC:</label>
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 15%">Heart</th>
+          <td style="width: 45%">Chest Pain</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="chestPain" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="2" name="chestPain" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>Exertional Dyspnoea</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="dyspnoea" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="3" name="dyspnoea" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Orthopnoea</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="orthopnoea" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="4" name="orthopnoea" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Brain</th>
+          <td>Numbness</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="numbness" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="5" name="numbness" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Weakness</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="weakness" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="6" name="weakness" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <th>Renal</th>
+          <td>Uraemia</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="uraemia" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="7" name="uraemia" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>Oedema</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="oedema" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="8" name="oedema" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <label for="complications">HPT complications:</label>
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 15%">Heart</th>
+          <td style="width: 45%">LVH</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="LVH" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="9" name="LVH" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>IHD</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="IHD" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="10" name="IHD" value="No" /> No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>CCF</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="CCF" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="11" name="CCF" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Brain</th>
+          <td>CVA</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="CVA" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="12" name="CVA" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>TIA</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="TIA" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="13" name="TIA" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Dementia</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="dementia" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="14" name="dementia" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <th>Renal</th>
+          <td>Nephopathy</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="nephopathy" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="15" name="nephopathy" value="No" />
+                No
+              </label>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <th>Eye</th>
+          <td>Hypertensive Retinopathy</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="retinopathy" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="16" name="retinopathy" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <label for="risk">CV risk factors:</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 60%">Smoking</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="smoking" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="17" name="smoking" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Dyslipidemia</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="dyslipidemia" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="18" name="dyslipidemia" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FHx of premature CVD</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="prematureCVD" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="19" name="prematureCVD" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td style="width: 50%">
+            Risk Stratification
+            <input
+              style="width: 20%"
+              type="checkbox"
+              name="form-type"
+              value="riskStratification"
+              oninput="riskStratification()"
+            />
+          </td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="r1"
+                  name="stratification"
+                  value="Low/Moderate"
+                />
+                Low/<br />Moderate
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="r2"
+                  name="stratification"
+                  value="High"
+                />
+                High
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="r3"
+                  name="stratification"
+                  value="Very High"
+                />
+                Very<br />High
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="20"
+                  name="stratification"
+                  value="Not Done"
+                />
+                Not<br />Done
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <div id="riskStratification-form" style="display: none">
+        <label for="riskStratification"
+          >Framingham Risk Score for Hard Coronary Heart Disease</label
+        >
+        <table>
+          <tr>
+            <td style="width: 30%">Gender:</td>
+            <td style="width: 60%">
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input
+                    type="radio"
+                    id="gender"
+                    name="gender"
+                    value="male"
+                    onchange="calculateFramingham()"
+                  />
+                  Male
+                </label>
+                <label class="btn btn-secondary">
+                  <input
+                    type="radio"
+                    id="gender"
+                    name="gender"
+                    value="female"
+                    onchange="calculateFramingham()"
+                  />
+                  Female
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Age:</td>
+            <td>
+              <input
+                type="text"
+                id="age"
+                name="age"
+                oninput="calculateFramingham()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td for="tc">TC(mmol/L):</td>
+            <td style="width: 30%">
+              <input
+                type="text"
+                id="tc"
+                name="tc"
+                oninput="calculateFramingham()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td for="hdl">HDL(mmol/L):</td>
+            <td>
+              <input
+                type="text"
+                id="hdl"
+                name="hdl"
+                oninput="calculateFramingham()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td for="systolicBP">Systolic BP:</td>
+            <td>
+              <input
+                type="text"
+                id="systolicBP"
+                name="systolicBP"
+                oninput="calculateFramingham()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Smoker:</td>
+            <td>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input
+                    type="radio"
+                    id="smokerScore"
+                    name="smokerScore"
+                    value="1"
+                    onchange="calculateFramingham()"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-secondary">
+                  <input
+                    type="radio"
+                    id="smokerScore"
+                    name="smokerScore"
+                    value="0"
+                    onchange="calculateFramingham()"
+                  />
+                  No
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>BP Treated:</td>
+            <td>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input
+                    type="radio"
+                    id="bpTreated"
+                    name="bpTreated"
+                    value="1"
+                    onchange="calculateFramingham()"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-secondary">
+                  <input
+                    type="radio"
+                    id="bpTreated"
+                    name="bpTreated"
+                    value="0"
+                    onchange="calculateFramingham()"
+                  />
+                  No
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th for="score">10-year risk of MI or death:</th>
+            <td>
+              <div id="result"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p></p>
+      <label for="otherRisk">Other Risk:</label>
+      <textarea id="otherRisk" name="otherRisk"></textarea>
+
+      <label for="hf">Signs of Heart Failure:</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 60%">Elevated JVP</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="JVP" value="Yes" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="21" name="JVP" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Displaced Apex Beat</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="apexBeat" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="22" name="apexBeat" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Pulmonary Crepitations</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="crepitations" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="23" name="crepitations" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Ankle Oedema</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ankleOedema" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="24" name="ankleOedema" value="No" />
+                No
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <label for="issues">Issues/Diagnosis:</label>
+      <textarea id="issues" name="issues"></textarea>
+
+      <label for="checkList">Management Check List</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 55%">
+            Weight reduction
+            <div class="info-container">
+              <img
+                src="image/question.png"
+                alt="Question Mark Icon"
+                width="18"
+                height="18"
+              />
+              <div class="info-card">
+                <h6>
+                  1. 4kg reduction in body weight would achieve a BP reduction
+                  of 4.5/3.2 mmHg
+                </h6>
+                <h6>
+                  2. There is evidence that showed a reduction of 1kg in weight
+                  relates to 1 mmHg reduction in SBP.
+                </h6>
+                <h6>3. Recomendation: At least 5% weight reduction</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="25"
+                  name="weightReduction"
+                  value="Yes"
+                />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="weightReduction" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="weightReduction" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Reducing sodium intake
+            <div class="info-container">
+              <img
+                src="image/question.png"
+                alt="Question Mark Icon"
+                width="18"
+                height="18"
+              />
+              <div class="info-card">
+                <h6>
+                  1. Reduce salt intake to less than 2g of sodium or less than
+                  5g of salt a day (equivalent to 1 teaspoonful of salt).
+                </h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="26" name="reducingSodium" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="reducingSodium" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="reducingSodium" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Healthy living</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="27" name="healthyLiving" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="healthyLiving" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="healthyLiving" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Regular physical activity
+            <div class="info-container">
+              <img
+                src="image/question.png"
+                alt="Question Mark Icon"
+                width="18"
+                height="18"
+              />
+              <div class="info-card">
+                <h6>
+                  1. Advise patients to perform physical activity (e.g. moderate
+                  intensity aerobic exercise of at least 150 minutes per week).
+                </h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="28"
+                  name="regularPhysical"
+                  value="Yes"
+                />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="regularPhysical" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="regularPhysical" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Health eating
+            <div class="info-container">
+              <img
+                src="image/question.png"
+                alt="Question Mark Icon"
+                width="18"
+                height="18"
+              />
+              <div class="info-card">
+                <h6>
+                  1. Encourage diet rich in fruits, vegetables and dairy
+                  products with reduced saturated and total fat.
+                </h6>
+              </div>
+            </div>
+          </td>
+          <td style="width: 30%">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="29" name="healthEating" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="healthEating" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="healthEating" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Cessation of smoking</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="smokingCessation" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="smokingCessation" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="30"
+                  name="smokingCessation"
+                  value="NA"
+                />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Reducing Alcohol</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="reducingAlcohol" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="reducingAlcohol" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="31" name="reducingAlcohol" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <label for="Health promotion">Health promotion:</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 55%">Pap smear</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="papSmear" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="papSmear" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="32" name="papSmear" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Colorectal screening</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="Colorectal" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="Colorectal" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="33" name="Colorectal" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Quit smoking</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="quitSmoking" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="quitSmoking" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="34" name="quitSmoking" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>TB screening</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="TBScreening" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="TBScreening" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="35" name="TBScreening" value="NA" />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Pre-pregnancy care</td>
+          <td style="width: 30%">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="prePregnancyCare" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="prePregnancyCare" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="36"
+                  name="prePregnancyCare"
+                  value="NA"
+                />
+                NA
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Mammogram</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="Mammogram" value="Yes" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="Mammogram" value="No" />
+                No
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" id="37" name="Mammogram" value="NA" /> NA
+              </label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+      <p><table><tr>
+        <th style="width: 60%" for="hba1c">
+          Date for Next TCA in MyVas:
+          <div class="info-container"></div>
+        </th>
+        <td style="width: 30%">
+          <input type="text" id="myVas" name="myVas" />
+        </td>
+      </tr></table></p>
+      
+      <label for="additionalCx">Other Comments:</label>
+      <textarea id="additionalCx" name="additionalCx"></textarea>
+
+      <label for="additionalMx">Additional Management:</label>
+      <textarea id="additionalMx" name="additionalMx"></textarea>
+      <br />
+      <table style="width: 100%">
+        <tr>
+          <td>
+            <button type="submit" onclick="makeSummary()">Generate</button>
+          </td>
+          <!-- <td>
+            <div onclick="setAllDone();">
+              <img
+                src="image/cheat.png"
+                id="cheatImage"
+                alt="cheat"
+                style="width: 35px; height: 35px; margin-right: 10px"
+              />
+            </div>
+          </td> -->
+        </tr>
+      </table>
+    </form>
+
+    <div class="card">
+      <div class="container">
+        <button type="submit" onclick="copyToClipboard()">Copy to TPC</button>
+        <div id="summary"></div>
+      </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<script>
+  function makeSummary() {
+    // Get the form and summary elements
+    const form = document.getElementById("clerking-form");
+    const summary = document.getElementById("summary");
+
+    // Add event listener to form submit button
+    form.addEventListener("submit", (e) => {
+      // Prevent form submission
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+
+      // Create an empty object to store the form data
+      const formDataObj = {};
+
+      // Loop through the form data and add each key-value pair to the formDataObj
+      for (const [key, value] of formData.entries()) {
+        formDataObj[key] = value;
+      }
+
+      // Create a summary of the form data
+      const summaryHTML = `
+      <h2>Summary</h2>
+      <h4><strong>Comorbidity:</strong></h4>
+  	  ${formDataObj.comorbidity}
+      <strong>Compliance to treatment:</strong> ${formDataObj.compliance}
+      <strong>Home Blood Pressure Monitoring:</strong> ${formDataObj.hbpm}
+      <strong>Average Home BP:</strong> ${formDataObj.hbpmValue}
+      <br><strong>Symptoms of TOD/TOC:</strong>
+      <strong>Chest Pain:</strong> ${formDataObj.chestPain}
+      <strong>Dyspnoea:</strong> ${formDataObj.dyspnoea}
+      <strong>Orthopnoea:</strong> ${formDataObj.orthopnoea}
+  	  <strong>Numbness:</strong> ${formDataObj.numbness}
+  	  <strong>Weakness:</strong> ${formDataObj.weakness}
+  	  <strong>Uraemia:</strong> ${formDataObj.uraemia}
+  	  <strong>Oedema:</strong> ${formDataObj.oedema}
+      <br><strong>HPT complications:</strong>
+      <strong>LVH:</strong> ${formDataObj.LVH}
+      <strong>IHD:</strong> ${formDataObj.IHD}
+      <strong>CCF:</strong> ${formDataObj.CCF}
+      <strong>CVA:</strong> ${formDataObj.CVA}
+      <strong>TIA:</strong> ${formDataObj.TIA}
+  	  <strong>Dementia:</strong> ${formDataObj.dementia}
+  	  <strong>Nephopathy:</strong> ${formDataObj.nephopathy}
+  	  <strong>Hypertensive Retinopathy:</strong> ${formDataObj.retinopathy}
+      <br><strong>CV risk factors:</strong>
+      <strong>Smoking:</strong> ${formDataObj.smoking}
+      <strong>dyslipidemia:</strong> ${formDataObj.dyslipidemia}
+      <strong>FHx of premature CVD:</strong> ${formDataObj.prematureCVD}
+      <strong>Risk Stratification:</strong> ${formDataObj.stratification}
+      <strong>Others:</strong> ${formDataObj.otherRisk}
+      <br><strong>Signs of Heart Failure:</strong>
+      <strong>Elevated JVP:</strong> ${formDataObj.JVP}
+    	<strong>Displaced Apex Beat:</strong> ${formDataObj.apexBeat}
+  	  <strong>Pulmonary Crepitations:</strong> ${formDataObj.crepitations}
+      <strong>Ankle Oedema:</strong> ${formDataObj.ankleOedema}
+      <br><strong>Diagnosis/Issues:</strong>
+  	  <strong>Issues:</strong> ${formDataObj.issues}
+      <br><strong>Plan:</strong>
+      <strong>1. Non-pharmacological management:</strong>
+      <strong>Weight reduction:</strong> ${formDataObj.weightReduction}
+  	  <strong>Reducing sodium intake:</strong> ${formDataObj.reducingSodium}
+    	<strong>Healthy living:</strong> ${formDataObj.healthyLiving}
+      <strong>Regular physical activity:</strong> ${formDataObj.regularPhysical}
+      <strong>2. Health promotion:</strong>
+      <strong>Health eating:</strong> ${formDataObj.healthEating}
+  	  <strong>Cessation of smoking:</strong> ${formDataObj.smokingCessation}
+  	  <strong>Reducing Alcohol:</strong> ${formDataObj.reducingAlcohol}
+      <strong>Pap smear:</strong> ${formDataObj.papSmear}
+      <strong>Colorectal screening:</strong> ${formDataObj.Colorectal}
+  	  <strong>Quit smoking :</strong> ${formDataObj.quitSmoking}
+      <strong>TB screening:</strong> ${formDataObj.TBScreening}
+  	  <strong>Pre-pregnancy care:</strong> ${formDataObj.prePregnancyCare}
+  	  <strong>Mammogram:</strong> ${formDataObj.Mammogram}
+      <strong>Reducing Alcohol:</strong> ${formDataObj.reducingAlcohol}
+      <strong>Additional Comments:</strong><br>${formDataObj.additionalCx}
+      <strong>Additional Management:</strong><br>${formDataObj.additionalMx}
+      <strong>Next TCA:</strong> ${formDataObj.myVas}
+      
+  `;
+      // Set the summary HTML
+      summary.innerHTML = summaryHTML.replace(/\n/g, '<br>');
+    });
+  }
+
+  /* Set all radio button to DONE */
+  function setAllDone() {
+    document.getElementById("1").checked = true;
+    document.getElementById("38").checked = true;
+    document.getElementById("2").checked = true;
+    document.getElementById("3").checked = true;
+    document.getElementById("4").checked = true;
+    document.getElementById("5").checked = true;
+    document.getElementById("6").checked = true;
+    document.getElementById("7").checked = true;
+    document.getElementById("8").checked = true;
+    document.getElementById("9").checked = true;
+    document.getElementById("10").checked = true;
+    document.getElementById("11").checked = true;
+    document.getElementById("12").checked = true;
+    document.getElementById("13").checked = true;
+    document.getElementById("14").checked = true;
+    document.getElementById("15").checked = true;
+    document.getElementById("16").checked = true;
+    document.getElementById("17").checked = true;
+    document.getElementById("18").checked = true;
+    document.getElementById("19").checked = true;
+    document.getElementById("20").checked = true;
+    document.getElementById("21").checked = true;
+    document.getElementById("22").checked = true;
+    document.getElementById("23").checked = true;
+    document.getElementById("24").checked = true;
+    document.getElementById("25").checked = true;
+    document.getElementById("26").checked = true;
+    document.getElementById("27").checked = true;
+    document.getElementById("28").checked = true;
+    document.getElementById("29").checked = true;
+    document.getElementById("30").checked = true;
+    document.getElementById("31").checked = true;
+    document.getElementById("32").checked = true;
+    document.getElementById("33").checked = true;
+    document.getElementById("34").checked = true;
+    document.getElementById("35").checked = true;
+    document.getElementById("36").checked = true;
+    document.getElementById("37").checked = true;
+  }
+
+  /* Toggle between showing and hiding the dropdown content */
+  function toggleDropdown() {
+    document.getElementById("dropdown-content").classList.toggle("show");
+  }
+
+  /* Close the dropdown if the user clicks outside of it */
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
+  function copyToClipboard() {
+    const summaryPanel = document.getElementById("summary");
+    const summaryText = summaryPanel.innerText;
+    // Create a temporary textarea element to copy the text to the clipboard
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = summaryText;
+    document.body.appendChild(tempTextArea);
+    // Select and copy the text to the clipboard
+    tempTextArea.select();
+    document.execCommand("copy");
+    // Remove the temporary textarea element
+    document.body.removeChild(tempTextArea);
+    // Provide feedback to the user (optional)
+    alert("Summary copied!");
+  }
+
+  function copyAll() {
+    // Get the text field
+    var copyText = summary;
+
+    // Select the text field
+    copyText.select();
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    alert("Text Copied");
+  }
+
+  function riskStratification() {
+    const riskCheckbox = document.querySelector(
+      'input[value="riskStratification"]'
+    );
+    const riskForm = document.getElementById("riskStratification-form");
+
+    riskCheckbox.addEventListener("change", () => {
+      if (riskCheckbox.checked) {
+        riskForm.style.display = "block";
+      } else {
+        riskForm.style.display = "none";
+      }
+    });
+  }
+
+  function calculateFramingham() {
+    var age = document.querySelector("#age").value;
+    var gender = document.querySelector('input[name="gender"]:checked');
+    var tc = document.querySelector("#tc").value;
+    var hdl = document.querySelector("#hdl").value;
+    var systolicBP = document.querySelector("#systolicBP").value;
+    var smokerScore = document.querySelector(
+      'input[name="smokerScore"]:checked'
+    );
+    var bpTreated = document.querySelector('input[name="bpTreated"]:checked');
+    var result = document.querySelector("#result");
+
+    // Check if all inputs have been filled in
+    if (
+      age !== "" &&
+      gender !== "" &&
+      tc !== "" &&
+      hdl !== "" &&
+      systolicBP !== "" &&
+      bpTreated !== "" &&
+      smokerScore !== ""
+    ) {
+      let Lscore;
+      if (gender.value === "male") {
+        Lscore =
+          52.00961 * Math.log(age) +
+          20.014077 * Math.log(tc * 38.67) -
+          0.905964 * Math.log(hdl * 38.67) +
+          1.305784 * Math.log(systolicBP) +
+          0.241549 * bpTreated.value +
+          12.096316 * smokerScore.value -
+          4.605038 * Math.log(age) * Math.log(tc * 38.67) -
+          2.84367 * Math.log(age) * smokerScore.value -
+          2.93323 * Math.log(age) * Math.log(age) -
+          172.300168;
+        score = (1 - 0.9402 ** Math.exp(Lscore)) * 100;
+      } else if (gender.value === "female") {
+        Lscore =
+          31.764001 * Math.log(age) +
+          22.465206 * Math.log(tc * 38.67) -
+          1.187731 * Math.log(hdl * 38.67) +
+          2.552905 * Math.log(systolicBP) +
+          0.420251 * bpTreated.value +
+          13.07543 * smokerScore.value -
+          5.060998 * Math.log(age) * Math.log(tc * 38.67) -
+          2.996945 * Math.log(age) * smokerScore.value -
+          146.5933061;
+        score = (1 - 0.98767 ** Math.exp(Lscore)) * 100;
+      }
+      result.innerHTML = `${score.toFixed(2)}%`;
+      if (score < 10) {
+        document.getElementById("r1").checked = true;
+      } else if (score >= 10 && score < 20) {
+        document.getElementById("r2").checked = true;
+      } else if (score >= 30) {
+        document.getElementById("r3").checked = true;
+      } else {
+        document.getElementById("20").checked = true;
+      }
+    } else {
+      result.innerHTML =
+        "Please fill in all the required information to calculate the score.";
+    }
+  }
+</script>

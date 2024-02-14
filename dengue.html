@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dengue Clerking Format</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css\styles.css" />
+
+    <!-- <link rel=”stylesheet” href=”http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css”> -->
+    <!-- <link href=”css/bootstrap-switch/bootstrap-switch.css” rel=”stylesheet”> -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #f2f2f2;
+        background-color: #6495ED;
+
+      }
+
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> -->
+        <li>
+          <ul>
+            <li><a href="diabetes.html">Diabetes Follow Up</a></li>
+            <li><a href="asthmaFollowUp.html">Asthma Follow Up</a></li>
+            <li><a href="hypertension.html">HTN Follow Up</a></li>
+            <li><a href="ams.html">AMS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <p></p>
+    <h1>Dengue Clerking Format(Trial)</h1>
+    <form id="clerking-form">
+      <table class="table">
+        <p>Recognition</p>
+        <thead>
+          <tr>
+            <th scope="col" style="width:25%">Criteria</th>
+            <th scope="col" style="width:10%">Yes</th>
+            <th scope="col" style="width:10%">No</th>
+            <th scope="col" style="width:55%">Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Fever</th>
+            <!-- <td>
+              <button type="button" class="btn btn-danger" name="feverOptions" value="Yes">Yes</button>
+            </td>
+            <td>  
+              <button type="button" class="btn btn-success" name="feverOptions" value="No">No</button>
+             </td> -->
+            <td><input type="radio" class="btn-check" name="feverOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="feverOptions" value="No" id="1" autocomplete="off">  
+            <td><textarea rows="1" id="fever" name="feverText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Ache & Pain</th>
+            <td><input type="radio" class="btn-check" name="painOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="painOptions" value="No" id="2" autocomplete="off">  
+            <td><textarea rows="1" id="pain" name="painText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Nausea and/or Vomitting</th>
+            <td><input type="radio" class="btn-check" name="nauseaOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="nauseaOptions" value="No" id="3" autocomplete="off">  
+            <td><textarea rows="1" id="nausea" name="nauseaText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Rash</th>
+            <td><input type="radio" class="btn-check" name="rashOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="rashOptions" value="No" id="4" autocomplete="off">  
+            <td><textarea rows="1" id="rash" name="rashText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Leucopenia</th>
+            <td><input type="radio" class="btn-check" name="leucopeniaOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="leucopeniaOptions" value="No" id="5" autocomplete="off">  
+            <td><textarea rows="1" id="leucopenia" name="leucopeniaText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Any Warning Signs</th>
+            <td><input type="radio" class="btn-check" name="feverOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="feverOptions" value="No" id="6" autocomplete="off">  
+            <td><textarea rows="1" id="fever" name="feverText" style="height:100%"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <table class="table">
+        <p>Warning Sign</p>
+        <thead>
+          <tr>
+            <th scope="col" style="width:25%; word-wrap: break-word">Criteria</th>
+            <th scope="col" style="width:10%">Yes</th>
+            <th scope="col" style="width:10%">No</th>
+            <th scope="col" style="width:55%">Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Persistent Vomiting>3x or Diarrhea >3X(over past 24 hrs)</th>
+            <td><input type="radio" class="btn-check" name="feverOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="feverOptions" value="No" id="1" autocomplete="off">  
+            <td><textarea rows="2" id="fever" name="feverText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Abdiminal Pain</th>
+            <td><input type="radio" class="btn-check" name="painOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="painOptions" value="No" id="2" autocomplete="off">  
+            <td><textarea rows="2" id="pain" name="painText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Lethargy/ Restlessness/ Confusion</th>
+            <td><input type="radio" class="btn-check" name="nauseaOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="nauseaOptions" value="No" id="3" autocomplete="off">  
+            <td><textarea rows="2" id="nausea" name="nauseaText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Tender Liver</th>
+            <td><input type="radio" class="btn-check" name="rashOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="rashOptions" value="No" id="4" autocomplete="off">  
+            <td><textarea rows="2" id="rash" name="rashText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Third Space Fluid Accumulation</th>
+            <td><input type="radio" class="btn-check" name="leucopeniaOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="leucopeniaOptions" value="No" id="5" autocomplete="off">  
+            <td><textarea rows="2" id="leucopenia" name="leucopeniaText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Spontaneuos Bleeding Tendencies</th>
+            <td><input type="radio" class="btn-check" name="feverOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="feverOptions" value="No" id="6" autocomplete="off">  
+            <td><textarea rows="2" id="fever" name="feverText" style="height:100%"></textarea></td>
+          </tr>
+          <tr>
+            <th scope="row">Raised Hct with rapid drop in platelet</th>
+            <td><input type="radio" class="btn-check" name="feverOptions" value="Yes" autocomplete="off">              
+            <td><input type="radio" class="btn-check" name="feverOptions" value="No" id="6" autocomplete="off">  
+            <td><textarea rows="2" id="fever" name="feverText" style="height:100%"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <label for="History">Reason for coming to the clinic/ history taking:</label>
+      <textarea id="history" name="history"></textarea>
+            
+      <label for="pe">Physical examination:</label>
+      <textarea id="pe" name="pe"></textarea>
+
+      <label for="vitalSign">Vital sign:</label>
+      <textarea id="vitalSign" name="vitalSign"></textarea>
+      
+      <label for="ix">Relevant investigations:</label>
+      <textarea id="ix" name="ix"></textarea>
+
+      <table style="width: 100%">
+        <tr>
+          <td><label for="diagnosis">Diagnosis:</label></td>
+        <tr>
+          <td>
+            <div>
+          <input style="width: 20%" type="checkbox" name="form-type" value="pneumonia" oninput="Pneumonia()" />
+          <label>Acute Bronchitis & Pneumonia</label>
+            </div>
+          </td>      
+        </tr>
+
+        <tr>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="aom" oninput="AOM()" />
+              <label>Acute Otitis Media</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="ap" oninput="AP()" />
+              <label>Acute Pharyngitis</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="ar" oninput="AR()" />
+              <label>Acute Rhinosinusitis</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="age" oninput="AGE()" />
+              <label>Acute Gastroenteritis</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="tissue" oninput="Tissue()" />
+              <label>Skin And Soft Tissue Infection</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="uti" oninput="UTI()" />
+              <label>Urinary Tract Infection</label>
+            </div>
+          </td>
+        </tr>
+        </tr>
+      </table>
+      
+      <div id="pneumonia-form" style="display: none">
+        <img src="image/pneumonia.jpg" alt="pneumonia Icon" width=100% height=100% />
+         <table style="width: 100%">
+         <p><label>Antibiotic Options</label></p>
+          <tr>
+            <th>
+              <div class="btn-group" data-toggle="buttons" >
+                <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                  <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 5 days" /> Amoxycillin 500mg TDS x 5 days
+                </label></tr>
+                <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                  <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 7 days" /> Amoxycillin 500mg TDS x 7 days
+                  </label></tr>
+                <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                  <input type="radio" name="antibioticChoice" value="Doxicycline 100mg BD x 7 days" /> Doxicycline 100mg BD x 7 days
+                  </label></tr>
+                <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                  <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 5 days" /> Amoxycillin/Clav 625mg TDS x 5 days
+                  </label></tr>
+                <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                  <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 7 days" /> Amoxycillin/Clavu 625mg TDS x 7 days
+                  </label></tr>
+                <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                     <textarea id="otherMed" name="antibioticChoiceOther" >Other Medication:</textarea> 
+                  </label></tr>
+              </div>
+            </th>
+          </tr>
+         </table>
+      </div>
+
+      <div id="aom-form" style="display: none">
+        <img src="image/aom.jpg" alt="pneumonia Icon" width=100% height=100% />
+         <table style="width: 100%">
+         <p><label>Antibiotic Options</label></p>
+            <tr>
+              <th>
+                <div class="btn-group" data-toggle="buttons">
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 5 days" /> Amoxycillin 500mg TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 7 days" /> Amoxycillin 500mg TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 400mg QID x 5 days" /> EES 400mg QID x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 400mg QID x 7 days" /> EES 400mg QID x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 5 days" /> EES 800mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 7 days" /> EES 800mg BD x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 5 days" /> Amoxycillin/Clav 625mg
+                TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 7 days" /> Amoxycillin/Clavu 625mg
+                TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                <textarea id="otherMed" name="antibioticChoiceOther">Other Medication:</textarea>
+              </label></tr>
+            </div>
+            </th>
+            </tr>
+         </table>
+      </div>
+
+      <div id="ap-form" style="display: none">
+        <img src="image/pharyngitis.jpg" alt="pneumonia Icon" width=100% height=100% />
+        <table style="width: 100%">
+          <p><label>Antibiotic Options</label></p>
+            <tr>
+              <th>
+                <div class="btn-group" data-toggle="buttons">
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Pen V 500mg QID x 5 days" /> Pen V 500mg QID x 5 day
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Pen V 500mg QID x 7 days" /> Pen V 500mg QID x 7 day
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Pen V 500mg QID x 10 days" /> Pen V 500mg QID x 10 day
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Pen V 1gm BD x 5 days" /> Pen V 1gm BD x 5 day
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Pen V 1gm BD x 7 days" /> Pen V 1gm BD x 7 day
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Pen V 1gm BD x 10 days" /> Pen V 1gm BD x 10 day
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 5 days" /> Amoxycillin 500mg TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 7 days" /> Amoxycillin 500mg TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 10 days" /> Amoxycillin 500mg TDS x 10
+                days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 5 days" /> EES 800mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 7 days" /> EES 800mg BD x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 10 days" /> EES 800mg BD x 10 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                <textarea id="otherMed" name="antibioticChoiceOther">Other Medication:</textarea>
+              </label></tr>
+            </div>
+            </th>
+            </tr>
+      </table>
+      </div>
+
+      <div id="ar-form" style="display: none">
+        <img src="image/rhinosinusitis.jpg" alt="pneumonia Icon" width=100% height=100% />
+        <table style="width: 100%">
+          <p><label>Antibiotic Options</label></p>
+            <tr>
+              <th>
+                <div class="btn-group" data-toggle="buttons">
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 5 days" /> Amoxycillin 500mg TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 7 days" /> Amoxycillin 500mg TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 10 days" /> Amoxycillin 500mg TDS x 10
+                days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 5 days" /> Amoxycillin/Clav 625mg
+                TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 7 days" /> Amoxycillin/Clavu 625mg
+                TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 5 days" /> EES 800mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Doxicycline 100mg BD x 5 days" /> Doxicycline 100mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                <textarea id="otherMed" name="antibioticChoiceOther">Other Medication:</textarea>
+              </label></tr>
+            </div>
+            </th>
+            </tr>
+      </table>
+      </div>
+      
+      <div id="age-form" style="display: none">
+        <img src="image/gastroenteritis.jpg" alt="pneumonia Icon" width=100% height=100% />
+        <table style="width: 100%">
+          <p><label>Antibiotic Options</label></p>
+          <tr>
+            <th>
+              <div class="btn-group" data-toggle="buttons">
+            <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                <textarea id="otherMed" name="antibioticChoiceOther">Other Medication:</textarea>
+              </label></tr>
+      </div>
+      </th>
+          </tr>
+      </table>
+      </div>
+
+      <div id="tissue-form" style="display: none">
+        <img src="image/softTissue.jpg" alt="pneumonia Icon" width=100% height=100% />
+        <table style="width: 100%">
+          <p><label>Antibiotic Options</label></p>
+            <tr>
+              <th>
+                <div class="btn-group" data-toggle="buttons">
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Topical 2% Fusidic Acid BD/TDS x 7 days" /> Topical 2% Fusidic Acid BD/TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 5 days" /> Amoxycillin 500mg TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin 500mg TDS x 7 days" /> Amoxycillin 500mg TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 5 days" /> Amoxycillin/Clav 625mg TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 7 days" /> Amoxycillin/Clavu 625mg TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cefuroxime 250mg BD x 5 days" /> Cefuroxime 250mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cefuroxime 250mg BD x 7 days" /> Cefuroxime 250mg BD x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cephalexin 500 QID x 5 days" /> Cephalexin 500 QID x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cephalexin 500 QID x 7 days" /> Cephalexin 500 QID x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cloxacillin 500mg QID x 5 days" /> Cloxacillin 500mg QID x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cloxacillin 500mg QID x 7 days" /> Cloxacillin 500mg QID x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 5 days" /> EES 800mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="EES 800mg BD x 7 days" /> EES 800mg BD x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                <textarea id="otherMed" name="antibioticChoiceOther">Other Medication:</textarea>
+              </label></tr>
+            </div>
+            </th>
+            </tr>
+      </table>
+      </div>
+
+      <div id="uti-form" style="display: none">
+        <img src="image/UTI.jpg" alt="pneumonia Icon" width=100% height=100% />
+         <table style="width: 100%">
+         <p><label>Antibiotic Options</label></p>
+            <tr>
+              <th>
+                <div class="btn-group" data-toggle="buttons">
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 3 days" /> Amoxycillin/Clav 625mg TDS x 3 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 5 days" /> Amoxycillin/Clavu 625mg TDS x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Amoxycillin/Clav 625mg TDS x 7 days" /> Amoxycillin/Clavu 625mg TDS x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cefuroxime 250mg BD x 3 days" /> Cefuroxime 250mg BD x 3 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cefuroxime 250mg BD x 5 days" /> Cefuroxime 250mg BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cephalexin 500 BD x 3 days" /> Cephalexin 500 BD x 3 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cephalexin 500 BD x 5 days" /> Cephalexin 500 BD x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Cephalexin 500 BD x 7 days" /> Cephalexin 500 BD x 7 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 60%; text-align: start;">
+                <input type="radio" name="antibioticChoice" value="Nitrofurantoin 100mg QID x 5 days" /> Nitrofurantoin 100mg QID x 5 days
+              </label></tr>
+            <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+                <textarea id="otherMed" name="antibioticChoiceOther">Other Medication:</textarea>
+              </label></tr>
+            </div>
+            </th>
+            </tr>
+         </table>
+      </div>
+     
+      <table style="width: 100%">
+        <tr>
+          <td><label for="indication">Antibiotic Indication</label></td>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 40%" type="checkbox" name="form-type" value="indication" />
+              <label>Indicated</label>
+            </div>
+          </td>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="noIndication" oninput="Indication()" />
+              <label>Not Indicated</label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+      <div id="indication-form" style="display: none">
+        <table style="width: 100%">
+          <p><label>Reason for non-indicated prescription:</label></p>
+          <tr>
+            <th>
+              <div class="btn-group" data-toggle="buttons">
+          <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+              <textarea id="reason" name="reason"></textarea>
+            </label></tr>
+          </th>
+          </tr>
+        </table>
+      </div>
+
+      <table style="width: 100%">
+        <tr>
+          <td><label for="indication">Drug Allergy</label></td>
+        <tr>
+          <td>
+            <div>
+              <input style="width: 40%" type="checkbox" name="form-type" value="NoAllergy" />
+              <label>No drug allergy</label>
+            </div>
+          </td>
+          <td>
+            <div>
+              <input style="width: 20%" type="checkbox" name="form-type" value="allergy" oninput="Allergy()" />
+              <label>Drug allergy</label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+      <div id="allergy-form" style="display: none">
+        <table style="width: 100%">
+          <p><label>Allergic to:</label></p>
+          <tr>
+            <th>
+              <div class="btn-group" data-toggle="buttons">
+          <tr> <label class="btn btn-secondary" style="width: 100%; text-align: start;">
+              <textarea id="drugName" name="drugName"></textarea>
+            </label></tr>
+          </th>
+          </tr>
+        </table>
+      </div>
+
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 70%">
+            Antibiotic Education
+            <div class="info-container">
+              <img src="image/question.png" alt="Question Mark Icon" width="18" height="18" />
+              <div class="info-card">
+                <h6>1. Take the Full Course:</h6>
+                <h6>It's crucial to take the entire course of antibiotics as prescribed by the healthcare provider, even if the symptoms improve. Stopping the medication early may allow bacteria to survive and lead to antibiotic
+                    resistance.
+                </h6>
+                <h6>2. Follow the Schedule:</h6>
+                <h6>
+                    Take the antibiotics at the prescribed times each day. If it's a once-daily dose, try to take it at the same time every day for consistent levels of the medication in the body.
+                </h6>
+                <h6>3. Don't Skip Doses:</h6>
+                <h6>Avoid skipping doses, as this can reduce the effectiveness of the antibiotic treatment.
+                </h6>
+                <h6>4. Take the Full Course:</h6>
+                <h6>It's crucial to take the entire course of antibiotics as prescribed by the healthcare provider,
+                  even if the symptoms improve. Stopping the medication early may allow bacteria to survive and lead to antibiotic
+                  resistance.
+                </h6>
+                <h6>5. Do Not Share:</h6>
+                <h6>Antibiotics are prescribed specifically for your condition. Do not share them with others, even if they
+                have similar symptoms.
+                </h6>
+                <h6>6. Watch for Side Effects:</h6>
+                <h6>Be aware of common side effects such as gastrointestinal disturbances (e.g., nausea, diarrhea),
+                rash, or allergic reactions. If any severe or unexpected side effects occur, contact your healthcare provider
+                immediately.
+                </h6>
+                <h6>7. Store Properly:</h6>
+                <h6>Keep the antibiotics in their original packaging at room temperature, away from moisture and direct
+                sunlight. Some antibiotics may require refrigeration, so always check the label.
+                </h6>
+              </div>
+            </div>
+          </td>
+          <td style="width: 30%">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="2" name="edu" value="1. Take the Full Course<br>2. Follow the Schedule<br>3. Don't Skip Doses<br>4. Take the Full Course<br>5. Do Not Share<br>6. Watch for Side Effects<br>7. Store Properly" />
+                Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="edu" value="Not Done" />
+                No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Notification</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="Notification" value="Done" id="19" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="Notification" value="Not Done" />
+                Not Done</label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="Notification" value="Not Related"  />
+                Not Related
+              </label>
+            </div>
+          </td>
+        </tr>
+        
+      </table>
+ 
+      <label for="additionalMx">Additional Management:</label>
+      <textarea id="additionalMx" name="additionalMx"></textarea>
+      <br />
+
+      <table style="width: 100%">
+        <tr>
+          <td>
+            <button type="submit" onclick="makeSummary()">Generate</button>
+          </td>
+          <!-- <td>
+            <div onclick="setAllDone();">
+              <img
+                src="image/cheat.png"
+                id="cheatImage"
+                alt="cheat"
+                style="width: 35px; height: 35px; margin-right: 10px"
+              />
+            </div>
+          </td> -->
+        </tr>
+      </table>
+    </form>
+
+    <div class="card">
+      <div class="container">
+        <button type="submit" onclick="copyToClipboard()">Copy to TPC</button>
+        <div id="summary"></div>
+      </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<script>
+  function makeSummary() {
+    // Get the form and summary elements
+    const form = document.getElementById("clerking-form");
+    const summary = document.getElementById("summary");
+
+    // Add event listener to form submit button
+    form.addEventListener("submit", (e) => {
+      // Prevent form submission
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+
+      // Create an empty object to store the form data
+      const formDataObj = {};
+
+      // Loop through the form data and add each key-value pair to the formDataObj
+      for (const [key, value] of formData.entries()) {
+        formDataObj[key] = value;
+      }
+      
+      let antibioticPicked;
+      let diagnosis;
+      let abIndication;
+      let drugAllergy;
+      if (
+        document.querySelector('input[value="pneumonia"]').checked ||
+        document.querySelector('input[value="aom"]').checked ||
+        document.querySelector('input[value="ap"]').checked ||
+        document.querySelector('input[value="ar"]').checked ||
+        document.querySelector('input[value="age"]').checked ||
+        document.querySelector('input[value="uti"]').checked ||
+        document.querySelector('input[value="tissue"]').checked
+      ) {
+        antibioticPicked = `${formDataObj.antibioticChoice}
+          ${formDataObj.antibioticChoiceOther}`;
+        if (document.querySelector('input[value="pneumonia"]').checked) {
+          diagnosis = "Acute Pneumonia";
+        } 
+        else if (document.querySelector('input[value="aom"]').checked) {
+          diagnosis = "Acute Otitis Media";
+        } 
+        else if (document.querySelector('input[value="ap"]').checked) {
+          diagnosis = "Acute Pharyngitis";
+        }
+        else if (document.querySelector('input[value="ar"]').checked) {
+          diagnosis = "Acute Rhinosinusitis";
+        }
+        else if (document.querySelector('input[value="age"]').checked) {
+          diagnosis = "Acute Gastroenteritis";
+        }
+        else if (document.querySelector('input[value="tissue"]').checked) {
+          diagnosis = "Skin And Soft Tissue Infection";
+        }
+        else if (document.querySelector('input[value="uti"]').checked) {
+          diagnosis = "Urinary Tract Infection";
+        }
+      } else {
+        antibioticPicked = "";
+        diagnosis = "";
+      }
+
+      if (document.querySelector('input[value="noIndication"]').checked){
+        abIndication = `Antibiotic not indicated<br>reason:${formDataObj.reason}`;
+      } else {
+        abIndication = "Antibiotic Indicated"
+      }
+      if (document.querySelector('input[value="allergy"]').checked) {
+        drugAllergy = `Allergic to ${formDataObj.drugName}`;
+      } else {
+        drugAllergy = "No Drug Allergy"
+      }
+
+      // Create a summary of the form data
+      const summaryHTML = `
+  			<h2>Summary</h2>
+        <strong>History:</strong><br>${formDataObj.history}
+        <br><strong>Physical Examination:</strong><br>${formDataObj.pe}
+        <br><strong>Vital Sign:</strong><br>${formDataObj.vitalSign}
+        <br><strong>Investigation:</strong><br>${formDataObj.ix}
+        <br><strong>Diagnosis:</strong><br>${diagnosis}
+        <br><strong>Drug Allergy:</strong><br>${drugAllergy}
+        <br><strong>Antibiotic Indication:</strong> ${abIndication}
+        <br><strong>Plan:
+        <strong>Antibiotic:</strong><br>${antibioticPicked}
+        <strong>Health Education:</strong><br>${formDataObj.edu}
+        <strong>Notification:</strong> ${formDataObj.Notification}
+        <strong>Additional Management:</strong> ${formDataObj.additionalMx}
+        `;
+      // Set the summary HTML
+      summary.innerHTML = summaryHTML.replace(/\n/g, '<br>');
+    });
+  }
+
+  /* Close the dropdown if the user clicks outside of it */
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
+  function copyToClipboard() {
+    const summaryPanel = document.getElementById("summary");
+    const summaryText = summaryPanel.innerText;
+    // Create a temporary textarea element to copy the text to the clipboard
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = summaryText;
+    document.body.appendChild(tempTextArea);
+    // Select and copy the text to the clipboard
+    tempTextArea.select();
+    document.execCommand("copy");
+    // Remove the temporary textarea element
+    document.body.removeChild(tempTextArea);
+    // Provide feedback to the user (optional)
+    alert("Summary copied!");
+  }
+
+  function Pneumonia() {
+    const checkBox = document.querySelector('input[value="pneumonia"]');
+    const targetForm = document.getElementById("pneumonia-form");
+
+    checkBox.addEventListener("change", () => {
+      if (checkBox.checked) {
+        targetForm.style.display = "block";
+      } else {
+        targetForm.style.display = "none";
+      }
+    });
+  }
+
+  function Tissue() {
+      const checkBox = document.querySelector('input[value="tissue"]');
+      const targetForm = document.getElementById("tissue-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+  
+  function AOM() {
+      const checkBox = document.querySelector('input[value="aom"]');
+      const targetForm = document.getElementById("aom-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+    function AP() {
+      const checkBox = document.querySelector('input[value="ap"]');
+      const targetForm = document.getElementById("ap-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+    function AR() {
+      const checkBox = document.querySelector('input[value="ar"]');
+      const targetForm = document.getElementById("ar-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+    function AGE() {
+      const checkBox = document.querySelector('input[value="age"]');
+      const targetForm = document.getElementById("age-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+    function UTI() {
+      const checkBox = document.querySelector('input[value="uti"]');
+      const targetForm = document.getElementById("uti-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+    function Indication() {
+        const checkBox = document.querySelector('input[value="noIndication"]');
+        const targetForm = document.getElementById("indication-form");
+
+        checkBox.addEventListener("change", () => {
+          if (checkBox.checked) {
+            targetForm.style.display = "block";
+          } else {
+            targetForm.style.display = "none";
+          }
+        });
+      }
+
+      function Allergy() {
+        const checkBox = document.querySelector('input[value="allergy"]');
+        const targetForm = document.getElementById("allergy-form");
+
+        checkBox.addEventListener("change", () => {
+          if (checkBox.checked) {
+            targetForm.style.display = "block";
+          } else {
+            targetForm.style.display = "none";
+          }
+        });
+      }
+</script>

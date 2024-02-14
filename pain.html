@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pain As 5th Vital Sign</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css\styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE3FF;
+      }
+
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> -->
+        <li>
+          <ul>
+            <li><a href="diabetes.html">Diabetes Follow Up</a></li>
+            <li><a href="asthmaFollowUp.html">Asthma Follow Up</a></li>
+            <li><a href="hypertension.html">HTN Follow Up</a></li>
+            <li><a href="ams.html">AMS</a></li>
+            <li><a href="pain.html">Pain Clinic</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <p></p>
+    <h1>Chronic Pain Assessment Format</h1>
+    <form id="clerking-form">
+      
+      <label>Past History:</label>
+      <textarea id="pastHistory" name="pastHistory"></textarea>
+      
+      <label>History taking/Description of Pain:</label>
+      <div class="info-container">
+        <img
+          src="image/question.png"
+          alt="Question Mark Icon"
+          width="18"
+          height="18"
+        />
+        <div class="info-card">
+          <img src="image/painDescription.png" alt="Question Mark Icon" style='height: 180%; width: 180%;' />
+        </div>
+      </div>
+      <textarea id="history" class="bigArea" rows="20" cols="50" name="history" >"Site:\nDuration"</textarea>
+      
+      <label>Physical examination:</label>
+      <br>
+      <label>Vital sign: Shown in TPC</label>
+      <div class="info-container">
+        <img
+          src="image/question.png"
+          alt="Question Mark Icon"
+          width="18"
+          height="18"
+        />
+        <div class="info-card">
+          <img src="image/PainScore.png" alt="Question Mark Icon" style='height: 180%; width: 180%;' />
+        </div>
+      </div>
+      <br>
+      <label>Pain Site:</label>
+      <canvas id="drawingCanvas" style="border:1px solid #000000;">
+          </canvas>
+      <button type="button" id="eraseButton">Erase</button>
+      <br>
+      <textarea id="pe" name="pe"></textarea>
+      <label>Investigations:</label>
+      <textarea id="ix" name="ix"></textarea>
+      
+      <label>Diagnosis:(Delete the Non-relavant)</label>
+      <textarea id="dx" name="dx"></textarea>
+
+      <div id="Mx-form" style="display: block">
+        <label>Pharmacotherapy:</label>
+        <div class="info-container">
+          <img
+            src="image/question.png"
+            alt="Question Mark Icon"
+            width="18"
+            height="18"
+          />
+          <div class="info-card">
+            <img src="image/PainLadder.png" alt="Question Mark Icon" style='height: 180%; width: 180%;' />
+          </div>
+        </div>
+        <textarea id="pharma" name="pharma"></textarea>
+        <label>Non-pharmacotherapy:</label>
+        <table>
+          <table style="width: 100%">
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Physiotherapy</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="Physiotherapy" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Occupational Therapy</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="OT" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Counselor</span>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="Counselor" /></td>
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Traditional & Complementary Medicine</span>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="TCM" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div id="Goal-form" style="display: block">
+        <br>
+        <label>Treatment Goal:</label>
+        <br>
+        <label>Improve function:</label>
+        <table>
+          <table style="width: 100%">
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Reduce pain severity</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="ReducePain" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Provide Safe & Tolerable Treatment</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="SafeTreatment" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+          </tr>
+        </table>
+        <br>
+        <label>Improve ability to participate in:</label>
+        <table>
+          <table style="width: 100%">
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Household work</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="HouseholdWork" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+            
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Leisure activities</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="LeisureActivities" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+            
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">School attendance</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="SchoolAttendance" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+            
+          </tr>
+          <tr>
+            <td style="width: 50%"><span style="width: 40%">Work</span></td>
+            <td style="width: 50%"><input style="width: 30%" type="checkbox" name="form-type" value="Work" />
+            <img src="image/question.png" alt="Question Mark Icon"  width="18"  height="18"/></td>
+            
+          </tr>
+        </table>
+      </div>
+      <br>
+
+
+ 
+      <label>Additional Management:</label>
+      <textarea id="Fup" name="Fup"></textarea>
+      <br />
+
+      <table style="width: 100%">
+        <tr>
+          <td>
+            <button type="submit" onclick="makeSummary()">Generate</button>
+          </td>
+          <!-- <td>
+            <div onclick="setAllDone();">
+              <img
+                src="image/cheat.png"
+                id="cheatImage"
+                alt="cheat"
+                style="width: 35px; height: 35px; margin-right: 10px"
+              />
+            </div>
+          </td> -->
+        </tr>
+      </table>
+    </form>
+
+    <div class="card">
+      <div class="container">
+        <button type="submit" onclick="copyToClipboard()">Copy to TPC</button>
+        <div id="summary"></div>
+        <canvas id="outputCanvas" style="display:none;"></canvas>
+      </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+            const textareaHx = document.getElementById("history");
+            const textareaDx = document.getElementById("dx");
+            const prefilledHx = "Site:\nDuration:\nNature:\nPsychosocial screening (ACT-UP):\nActivities: \nCoping: \nThink: \nUpset: \nPeople: ";
+            const prefilledDx = "1. R52.0: Acute Pain\n1. R52.2: Other Chronic Pain";
+            // Set the prefilled content initially
+            textareaHx.value = prefilledHx;
+            textareaDx.value = prefilledDx;
+        });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var canvas = document.getElementById('drawingCanvas');
+  var outputCanvas = document.getElementById('outputCanvas');
+  var context = canvas.getContext('2d');
+  var outputContext = outputCanvas.getContext('2d');
+  var isDrawing = false;
+  var isErasing = false;
+  var image = new Image();
+  image.src = 'image/anatomy.jpg'; // Path to your image
+
+    image.onload = function() {
+      var destWidth = window.innerWidth * 0.5;
+      var destHeight = window.innerHeight * 0.5;
+
+        // Set canvas size to match the destination size
+        canvas.width = destWidth;
+        canvas.height = destHeight;
+        outputCanvas.width = destWidth;
+        outputCanvas.height = destHeight;
+
+        // Draw the image on the canvas at the desired size
+        context.drawImage(image, 0, 0, destWidth, destHeight);
+        context.drawImage(canvas, 0, 0); // Draw the current state of the drawing canvas
+        // canvas.style.display = 'block';
+    };
+
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+    }
+
+    canvas.addEventListener('mousedown', function(e) {
+        var mousePos = getMousePos(canvas, e);
+        isDrawing = true;
+        context.beginPath();
+        context.moveTo(mousePos.x, mousePos.y);
+    });
+
+    canvas.addEventListener('mousemove', function(e) {
+        if (isDrawing) {
+            var mousePos = getMousePos(canvas, e);
+            drawLine(context, mousePos.x, mousePos.y);
+        }
+    });
+
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+
+    document.getElementById('eraseButton').addEventListener('click', function() {
+      var destWidth = window.innerWidth * 0.5;
+      var destHeight = window.innerHeight * 0.5;
+      canvas.width = destWidth;
+      canvas.height = destHeight;
+
+      context.clearRect(0, 0, canvas.width, canvas.height); 
+      context.drawImage(image, 0, 0, destWidth, destHeight);
+      context.drawImage(canvas, 0, 0);
+      // event.preventDefault();
+
+    });
+
+    function drawLine(context, x, y) {
+        context.lineTo(x, y);
+        context.strokeStyle = isErasing ? '#FFFFFF' : '#000000'; // Line color
+        context.lineWidth = isErasing ? 10 : 2; // Line width
+        context.stroke();
+    }
+
+    function stopDrawing() {
+        if (isDrawing) {
+            context.closePath();
+            isDrawing = false;
+        }
+    }
+});
+
+ 
+function makeSummary() {
+  // Get the form and summary elements
+  const form = document.getElementById("clerking-form");
+  const summary = document.getElementById("summary");
+  var canvas = document.getElementById('drawingCanvas');
+  var outputCanvas = document.getElementById('outputCanvas');
+  var context = canvas.getContext('2d');
+  var outputContext = outputCanvas.getContext('2d');
+
+  // Add event listener to form submit button
+  form.addEventListener("submit", (e) => {
+    // Prevent form submission
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(form);
+
+    // Create an empty object to store the form data
+    const formDataObj = {};
+
+    // Loop through the form data and add each key-value pair to the formDataObj
+    for (const [key, value] of formData.entries()) {
+      formDataObj[key] = value;
+    }
+    
+    let nonPharma;
+      if (
+        document.querySelector('input[value="Physiotherapy"]').checked ||
+        document.querySelector('input[value="OT"]').checked ||
+        document.querySelector('input[value="Counselor"]').checked ||
+        document.querySelector('input[value="TCM"]').checked
+      ) {
+        let physio;
+        let ot;
+        let counselor;
+        let tcm;
+
+        if (document.querySelector('input[value="Physiotherapy"]').checked) {
+          physio = "Refer Physiotherapist";
+        } else physio = "";
+        if (document.querySelector('input[value="OT"]').checked) {
+          ot = "Refer OT";
+        } else ot = "";
+        if (document.querySelector('input[value="Counselor"]').checked) {
+          counselor = "Refer Counselor";
+        } else counselor = "";
+        if (
+          document.querySelector('input[value="TCM"]').checked
+        ) {
+          tcm = "Refer TCM";
+        } else tcm = "";
+        nonPharma = `	
+        ${physio}
+        ${ot}
+        ${counselor}
+        ${tcm}`;
+      } else {
+        nonPharma = "";
+      }
+
+    let goal;
+      if (
+        document.querySelector('input[value="ReducePain"]').checked ||
+        document.querySelector('input[value="SafeTreatment"]').checked ||
+        document.querySelector('input[value="HouseholdWork"]').checked ||
+        document.querySelector('input[value="LeisureActivities"]').checked||
+        document.querySelector('input[value="SchoolAttendance"]').checked ||
+        document.querySelector('input[value="Work"]').checked
+      ) {
+        let pain;
+        let safe;
+        let houseW;
+        let leisure;
+        let school;
+        let work;
+
+        if (document.querySelector('input[value="ReducePain"]').checked) {
+          pain = "Reduce Pain";
+        } else pain = "";
+        if (document.querySelector('input[value="SafeTreatment"]').checked) {
+          safe = "Safe Treatment";
+        } else safe = "";
+        if (document.querySelector('input[value="HouseholdWork"]').checked) {
+          houseW = "Household Work";
+        } else houseW = "";
+        if (
+          document.querySelector('input[value="LeisureActivities"]').checked
+        ) {
+          leisure = "Leisure Activities";
+        } else leisure = "";
+        if (document.querySelector('input[value="SchoolAttendance"]').checked) {
+          school = "School Attendance";
+        } else school = "";
+        if (
+          document.querySelector('input[value="Work"]').checked
+        ) {
+          work = "Work";
+        } else work = "";
+
+        goal = `	
+        ${pain}
+        ${safe}
+        ${houseW}
+        ${leisure}
+        ${school}
+        ${work}`;
+      } else {
+        goal = "";
+      }
+    
+  outputContext.clearRect(0, 0, outputCanvas.width, outputCanvas.height);
+  outputContext.drawImage(canvas, 0, 0, window.innerWidth*0.4, window.innerHeight*0.4); // Clear previous image
+  outputCanvas.style.display = 'block'; // Show the output canvas
+  
+  
+    // try {
+    //     var imageDataUrl = canvas.toDataURL("image/jpg",0.92);
+    //     // Use imageDataUrl
+    // } catch (error) {
+    //     console.error("Error generating data URL", error);
+    // }
+
+
+  // // Create an <img> element to hold the canvas image
+  // var imgTag = '<img src="' + imageDataUrl + '" alt="Canvas Image"/>';
+
+    const summaryHTML = `
+      <h2>Summary</h2>
+      <strong>Past History:</strong><br>${formDataObj.pastHistory}
+      <strong>History:</strong><br>${formDataObj.history}
+      <strong>Physical Examination:</strong>
+      <strong>Vital Sign:</strong>As Aboved
+      <strong>Other Findings:</strong>
+      <br>${formDataObj.pe}
+      <strong>Investigation Result:</strong><br>${formDataObj.ix}
+      <strong>Diagnosis:</strong><br>${formDataObj.dx}
+      <strong>Management:</strong>
+      <strong>Pharmacotherapy:</strong><br>${formDataObj.pharma}
+      <strong>Non-Pharmacotherapy:</strong><br>${nonPharma}
+      <strong>Treatment Goal:</strong><br>${goal}
+      <strong>Follow-Up Plan:</strong><br>${formDataObj.Fup}
+      `;
+    // var imageDataUrl = outputCanvas.toDataURL("image/png");
+    // Set the summary HTML
+    summary.innerHTML = summaryHTML.replace(/\n/g, '<br>');
+
+  });
+}
+
+/* Close the dropdown if the user clicks outside of it */
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+  function copyToClipboard() {
+    const summaryPanel = document.getElementById("summary");
+    const summaryText = summaryPanel.innerText;
+    // Create a temporary textarea element to copy the text to the clipboard
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = summaryText;
+    document.body.appendChild(tempTextArea);
+    // Select and copy the text to the clipboard
+    tempTextArea.select();
+    document.execCommand("copy");
+    // Remove the temporary textarea element
+    document.body.removeChild(tempTextArea);
+    // Provide feedback to the user (optional)
+    alert("Summary copied!");
+      }
+  
+ 
+
+  function AR() {
+      const checkBox = document.querySelector('input[value="ar"]');
+      const targetForm = document.getElementById("ar-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+  
+
+  function UTI() {
+      const checkBox = document.querySelector('input[value="uti"]');
+      const targetForm = document.getElementById("uti-form");
+
+      checkBox.addEventListener("change", () => {
+        if (checkBox.checked) {
+          targetForm.style.display = "block";
+        } else {
+          targetForm.style.display = "none";
+        }
+      });
+    }
+
+  function Indication() {
+        const checkBox = document.querySelector('input[value="noIndication"]');
+        const targetForm = document.getElementById("indication-form");
+
+        checkBox.addEventListener("change", () => {
+          if (checkBox.checked) {
+            targetForm.style.display = "block";
+          } else {
+            targetForm.style.display = "none";
+          }
+        });
+      }
+
+
+</script>

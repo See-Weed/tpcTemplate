@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DM Follow Up</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css\styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #90ee90;
+      }
+
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> -->
+        <li>
+          <ul>
+            <li><a href="diabetes.html">Diabetes Follow Up</a></li>
+            <li><a href="asthmaFollowUp.html">Asthma Follow Up</a></li>
+            <li><a href="hypertension.html">HTN Follow Up</a></li>
+            <li><a href="ams.html">AMS</a></li>
+            <li><a href="pain.html">Pain Clinic</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <p></p>
+    <h1>Diabetes Clinical Clerking Format</h1>
+    <form id="clerking-form">
+      <label for="complication">Diabetic Complications:</label>
+      <table style="width: 100%">
+        <tr>
+          <td>CVA</td>
+          <td style="width: 60%">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="cva" value="Present" /> Present
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="cva" value="Absent" id="1" />
+                Absent</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="cva" value="Unknown" /> Unknown</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Retinopathy</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="retinopathy" value="Present" />
+                Present
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="retinopathy" value="Absent" id="2" />
+                Absent</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="retinopathy" value="Unknown" />
+                Unknown</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IHD / CAD</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ihd_cad" value="Present" /> Present
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ihd_cad" value="Absent" id="3" />
+                Absent</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ihd_cad" value="Unknown" />
+                Unknown</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Nephropathy</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="nephropathy" value="Present" />
+                Present
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="nephropathy" value="Absent" id="4" />
+                Absent</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="nephropathy" value="Unknown" />
+                Unknown</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PVD</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="pvd" value="Present" /> Present
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="pvd" value="Absent" id="4.5" />
+                Absent</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="pvd" value="Unknown" /> Unknown</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 40%">
+            Sexual Dysfunction
+            <input
+              style="width: 20%"
+              type="checkbox"
+              name="form-type"
+              value="edAssessment"
+              oninput="EDAssessment()"
+            />
+          </td>
+
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="edComplication" value="Present" />
+                Present
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  name="edComplication"
+                  value="Absent"
+                  id="5"
+                />
+                Absent</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="edComplication" value="Unknown" />
+                Unknown</label
+              >
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div id="ed-form" style="display: none">
+        <label for="edEvaluation"
+          >The 5-item International Index of Erectile Function</label
+        >
+        <div>
+          <tr style="display: flex; width: 15%">
+            1. How do you rate your confidence that you could get and keep an
+            erection?
+          </tr>
+          <tr>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED1" value="1" />Very low
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED1" value="2" />
+                Low</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED1" value="3" />Moderate
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED1" value="4" />
+                High</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED1" value="5" />Very high
+              </label>
+            </div>
+          </tr>
+          <br />
+          <tr style="display: flex">
+            2. When you had erections with sexual stimulation, how often were
+            your erections hard enough for penetration (entering your partner)?
+          </tr>
+          <br />
+          <tr style="display: flex">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED2" value="0" />No sexual activity
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED2" value="1" />Never or almost never
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED2" value="2" />A few times(much less
+                than half the time)
+              </label>
+            </div>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED2" value="3" />Sometimes (about half
+                the time)
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED2" value="4" />
+                Most times (much more than half the time)</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED2" value="5" />Almost always or
+                always
+              </label>
+            </div>
+          </tr>
+          <tr style="display: flex">
+            3. During sexual intercourse, how often were you able to maintain
+            your erection after you had penetrated (entered) your partner?
+          </tr>
+          <tr>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED3" value="0" />No sexual activity
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED3" value="1" />Never or almost never
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED3" value="2" />A few times (much
+                less than half the time)
+              </label>
+            </div>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED3" value="3" />Sometimes (about half
+                the time)
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED3" value="4" />
+                Most times (much more than half the time)</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED3" value="5" />Almost always or
+                always
+              </label>
+            </div>
+          </tr>
+          <tr style="display: flex">
+            4. During sexual intercourse, how difficult was it to maintain your
+            erection to completion of intercourse?
+          </tr>
+          <tr>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED4" value="0" />Did not attempt
+                intercourse
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED4" value="1" />Extremely difficult
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED4" value="2" />Very difficult
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED4" value="3" />Difficult
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED4" value="4" />Slightly difficult
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED4" value="5" />Not difficult
+              </label>
+            </div>
+          </tr>
+          <tr style="display: flex">
+            5. When you attempted intercourse, how often was it satisfactory for
+            you?
+          </tr>
+          <tr>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED5" value="0" />No sexual activity
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED5" value="1" />Never or almost never
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED5" value="2" />A few times (much
+                less than half the time)
+              </label>
+            </div>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED5" value="3" />Sometimes (about half
+                the time)
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED5" value="4" />
+                Most times (much more than half the time)</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ED5" value="5" />Almost always or
+                always
+              </label>
+            </div>
+          </tr>
+        </div>
+      </div>
+      <br />
+      <label for="symptom">Symptoms:</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 40%">Hyperglycaemia</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="hyperglycaemia" value="Yes" />
+                Yes</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="hyperglycaemia" value="No" id="6" />
+                No</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Hypoglycaemia</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="hypoglycaemia" value="Yes" />
+                Yes</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="hypoglycaemia" value="No" id="7" />
+                No</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>SMBG</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="smbg" value="Done" /> Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="smbg" value="Not Done" id="8" /> Not
+                Done</label
+              >
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <label for="medication">Medication:</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 40%">Compliance</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="compliant" value="Yes" id="9" /> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="compliant" value="No" /> No</label
+              >
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th for="onInsulin" style="width: 40%">Insulin Accessment:</th>
+          <td>
+            <input
+              type="checkbox"
+              name="form-type"
+              value="onInsulin"
+              oninput="insulinAssessment()"
+            />On Insulin
+          </td>
+        </tr>
+      </table>
+
+      <div id="insulin-form" style="display: none">
+        <table style="width: 100%">
+          <tr>
+            <td style="width: 40%">Dosing</td>
+            <td>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input type="radio" name="dosing" value="Correct" /> Correct
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="dosing" value="Incorrect" />
+                  Incorrect</label
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Timing</td>
+            <td>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input type="radio" name="timing" value="Correct" /> Correct
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="timing" value="Incorrect" />
+                  Incorrect</label
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Technique</td>
+            <td>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input type="radio" name="technique" value="Correct" />
+                  Correct
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="technique" value="Incorrect" />
+                  Incorrect</label
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Site</td>
+            <td>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input type="radio" name="site" value="Correct" /> Correct
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="site" value="Incorrect" />
+                  Incorrect</label
+                >
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p></p>
+
+      <table>
+        <tr>
+          <th style="width: 30%" for="hba1c">
+            Target HBA1c:
+            <div class="info-container">
+              <img
+                src="image/question.png"
+                alt="Question Mark Icon"
+                width="18"
+                height="18"
+              />
+              <div class="info-card">
+                <img src="image/hba1cTarget.png" alt="HBA1c Target" />
+              </div>
+            </div>
+          </th>
+
+          <td style="width: 40%">
+            <input type="text" id="hba1c" name="hba1c" />
+          </td>
+        </tr>
+        <tr>
+          <th for="hba1cCurrent">Current HBA1c:</th>
+          <td>
+            <input type="text" id="hba1cCurrent" name="hba1cCurrent" />
+          </td>
+        </tr>
+      </table>
+
+      <label for="Health promotion">Health promotion:</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 30%">Routine blood Ix</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  name="routineBloodTest"
+                  value="Done"
+                  id="16"
+                />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="routineBloodTest" value="Not Done" />
+                Not Done</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Visual Acuity</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="va" value="Done" id="17" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="va" value="Not Done" />
+                Not Done</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Fundus Camera</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="fundusCamera" value="Done" id="18" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="fundusCamera" value="Not Done" />
+                Not Done</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Foot Care</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="footCare" value="Done" id="19" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="footCare" value="Not Done" />
+                Not Done</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ECG</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ecg" value="Done" id="20" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ecg" value="Not Done" />
+                Not Done</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Sexual Dysfunction</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ed" value="Done" />
+                Done</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ed" value="Not Done" />
+                Not Done</label
+              >
+              <label class="btn btn-secondary">
+                <input type="radio" name="ed" value="NA" id="21" />
+                NA</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PPC</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="ppc" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="ppc" value="Not Done" />
+                Not Done</label
+              ><label class="btn btn-secondary">
+                <input type="radio" name="ppc" value="NA" id="22" />
+                NA</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Pap smear</td>
+          <td style="width: 30%">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="papSmear" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="papSmear" value="Not Done" />
+                Not Done</label
+              ><label class="btn btn-secondary">
+                <input type="radio" name="papSmear" value="NA" id="23" />
+                NA</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Mammogram</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary"
+                ><input type="radio" name="Mammogram" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="Mammogram" value="Not Done" />
+                Not Done</label
+              ><label class="btn btn-secondary">
+                <input type="radio" name="Mammogram" value="NA" id="24" />
+                NA</label
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Colorectal screening</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="Colorectal" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="Colorectal" value="Not Done" />
+                Not Done</label
+              ><label class="btn btn-secondary">
+                <input type="radio" name="Colorectal" value="NA" id="25" />
+                NA</label
+              >
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>TB screening</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="TBScreen" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="TBScreen" value="Not Done" />
+                Not Done</label><label class="btn btn-secondary">
+                <input type="radio" name="TBScreen" value="NA" id="27" />
+                NA</label>
+            </div>
+          </td>
+        </tr>
+
+
+      </table>
+
+      <p></p>
+      <label for="issues">Issues/Diagnosis:</label>
+      <textarea id="issues" name="issues"></textarea>
+
+      <label for="checkList">Management Check List</label>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 50%">Weight reduction</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="10"
+                  name="weightReduction"
+                  value="Done"
+                />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="weightReduction" value="Not Done" />
+                Not Done
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Healthy living</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="11" name="healthyLiving" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="healthyLiving" value="Not Done" />
+                Not Done
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Regular physical activity</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="12"
+                  name="regularPhysical"
+                  value="Done"
+                />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="regularPhysical" value="Not Done" />
+                Not Done
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Health eating</td>
+          <td style="width: 30%">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" id="13" name="healthyEating" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="healthyEating" value="Not Done" />
+                Not Done
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Cessation of smoking</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="smokingCessation" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="smokingCessation" value="Not Done" />
+                Not Done
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="14"
+                  name="smokingCessation"
+                  value="Non-smoker"
+                />
+                Non-smoker
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Reducing Alcohol</td>
+          <td>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="reducingAlcohol" value="Done" />
+                Done
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="reducingAlcohol" value="Not Done" />
+                Not Done
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  id="15"
+                  name="reducingAlcohol"
+                  value="Non-alcoholic"
+                />
+                Non-alcoholic
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th for="referral">Referral:</th>
+          <td>
+            <input style="width: 15%" type="checkbox" name="FMS" value="FMS" />
+            FMS
+            <input
+              style="width: 15%; margin-left: 6.5%"
+              type="checkbox"
+              name="Dietitian"
+              value="Dietitian"
+            />Dietitian
+            <br />
+            <input
+              style="width: 15%"
+              type="checkbox"
+              name="DMTAC"
+              value="DMTAC"
+            />
+            DMTAC
+            <input
+              style="width: 15%"
+              type="checkbox"
+              name="QuitSmokingClinic"
+              value="QuitSmokingClinic"
+            />
+            Quit smoking clinic
+          </td>
+        </tr>
+      </table>
+
+      <p><table><tr>
+        <th style="width: 60%" for="hba1c">
+          Date for Next TCA in MyVas:
+          <div class="info-container"></div>
+        </th>
+        <td style="width: 30%">
+          <input type="text" id="myVas" name="myVas" />
+        </td>
+      </tr></table></p>
+
+      <label for="additionalCx">Other Comments:</label>
+      <textarea id="additionalCx" name="additionalCx"></textarea>
+
+      <label for="additionalMx">Additional Management:</label>
+      <textarea id="additionalMx" name="additionalMx"></textarea>
+      <br />
+
+      <table style="width: 100%">
+        <tr>
+          <td>
+            <button type="submit" onclick="makeSummary()">Generate</button>
+          </td>
+          <!-- <td>
+            <div onclick="setAllDone();">
+              <img
+                src="image/cheat.png"
+                id="cheatImage"
+                alt="cheat"
+                style="width: 35px; height: 35px; margin-right: 10px"
+              />
+            </div>
+          </td> -->
+        </tr>
+      </table>
+    </form>
+
+    <div class="card">
+      <div class="container">
+        <button type="submit" onclick="copyToClipboard()">Copy to TPC</button>
+        <div id="summary"></div>
+      </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<script>
+  function makeSummary() {
+    // Get the form and summary elements
+    const form = document.getElementById("clerking-form");
+    const summary = document.getElementById("summary");
+
+    // Add event listener to form submit button
+    form.addEventListener("submit", (e) => {
+      // Prevent form submission
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+
+      // Create an empty object to store the form data
+      const formDataObj = {};
+
+      // Loop through the form data and add each key-value pair to the formDataObj
+      for (const [key, value] of formData.entries()) {
+        formDataObj[key] = value;
+      }
+      let referrals;
+      if (
+        document.querySelector('input[value="FMS"]').checked ||
+        document.querySelector('input[value="Dietitian"]').checked ||
+        document.querySelector('input[value="DMTAC"]').checked ||
+        document.querySelector('input[value="QuitSmokingClinic"]').checked
+      ) {
+        let fms;
+        let diet;
+        let dmtac;
+        let quitSmoking;
+
+        if (document.querySelector('input[value="FMS"]').checked) {
+          fms = formDataObj.FMS;
+        } else fms = "";
+        if (document.querySelector('input[value="Dietitian"]').checked) {
+          diet = formDataObj.Dietitian;
+        } else diet = "";
+        if (document.querySelector('input[value="DMTAC"]').checked) {
+          dmtac = formDataObj.DMTAC;
+        } else dmtac = "";
+        if (
+          document.querySelector('input[value="QuitSmokingClinic"]').checked
+        ) {
+          quitSmoking = formDataObj.QuitSmokingClinic;
+        } else quitSmoking = "";
+        referrals = `	
+        <br><strong>Referrals:</strong>
+        ${fms}
+        ${diet}
+        ${dmtac}
+        ${quitSmoking}`;
+      } else {
+        referrals = "";
+      }
+      let edResult;
+      if (document.querySelector('input[value="edAssessment"]').checked) {
+        edResult = `	
+        <br>The 5-item International Index of Erectile Function:
+        <strong>Confidence:</strong> ${formDataObj.ED1}
+        <strong>Hard enough for penetration:</strong> ${formDataObj.ED2}
+        <strong>Maintain erection after penetration:</strong> ${formDataObj.ED3}
+        <strong>Maintain erection to completion of intercourse:</strong> ${formDataObj.ED4}
+        <strong>Satisfactory:</strong> ${formDataObj.ED5}`;
+      } else {
+        edResult = "";
+      }
+      let insulinComplaince;
+      if (document.querySelector('input[value="onInsulin"]').checked) {
+        insulinComplaince = `	
+        <br>Insulin Complaince:
+        <strong>Dosing:</strong> ${formDataObj.dosing}
+        <strong>Timing:</strong> ${formDataObj.timing}
+        <strong>Technique:</strong> ${formDataObj.technique}
+        <strong>Site:</strong> ${formDataObj.site}`;
+      } else {
+        insulinComplaince = "";
+      }
+      // Create a summary of the form data
+      const summaryHTML = `
+  			<h2>Summary</h2>
+        <strong>Complications:</strong>
+        <strong>CVA:</strong> ${formDataObj.cva}
+        <strong>Retinipathy:</strong> ${formDataObj.retinopathy}
+        <strong>IHD/CAD:</strong> ${formDataObj.ihd_cad}
+        <strong>Nephropathy:</strong> ${formDataObj.nephropathy}
+        <strong>Sexual Dysfunction:</strong> ${formDataObj.edComplication}
+        ${edResult}
+	      <br><strong>Symptoms:</strong>
+        <strong>Hyperglysemia:</strong> ${formDataObj.hyperglycaemia}
+        <strong>Hypoglysemia:</strong> ${formDataObj.hypoglycaemia}
+        <strong>SMBG:</strong> ${formDataObj.smbg}
+        <br><strong>Medication Complaince:</strong>${formDataObj.compliant}
+        ${insulinComplaince}
+        <strong>Target HBA1c:</strong> ${formDataObj.hba1c}
+        <strong>Current HBA1c:</strong> ${formDataObj.hba1cCurrent}
+	      <br><strong>Management:Non-pharmalogical</strong>
+        <strong>Weight Reduction:</strong> ${formDataObj.weightReduction}     
+        <strong>Healthy Living:</strong> ${formDataObj.healthyLiving}
+        <strong>Regular Physical Activities:</strong> ${formDataObj.regularPhysical}
+        <strong>Healthy Eating:</strong> ${formDataObj.healthyEating}
+        <strong>Smoking Cessation:</strong> ${formDataObj.smokingCessation}
+		    <strong>Reducing Alcohol:</strong> ${formDataObj.reducingAlcohol}
+	      <br><strong>Health Promotion</strong>		
+        <strong>Routine Blood Test:</strong> ${formDataObj.routineBloodTest}
+		    <strong>VA:</strong> ${formDataObj.va}
+        <strong>Fundus Camera:</strong> ${formDataObj.fundusCamera}
+		    <strong>Foot Care:</strong> ${formDataObj.footCare}
+        <strong>ECG:</strong> ${formDataObj.ecg}
+		    <strong>Sexual Dysfunction:</strong> ${formDataObj.ed}
+        <strong>PPC:</strong> ${formDataObj.ppc}
+		    <strong>Pap Smear:</strong> ${formDataObj.papSmear}
+        <strong>Mammogram:</strong> ${formDataObj.Mammogram}
+		    <strong>Colorectal:</strong> ${formDataObj.Colorectal}
+        <strong>TB Screening:</strong> ${formDataObj.TBScreen}
+	      <br><strong>Diagnosis/Issues:</strong><br>${formDataObj.issues}
+        ${referrals}
+        <strong>Additional Comments:</strong><br>${formDataObj.additionalCx}
+        <strong>Additional Management:</strong><br>${formDataObj.additionalMx}
+        <strong>Next TCA:</strong> ${formDataObj.myVas}
+        `;
+      // Set the summary HTML
+      summary.innerHTML = summaryHTML.replace(/\n/g, '<br>');
+    });
+  }
+
+  /* Set all radio button to DONE */
+  function setAllDone() {
+    document.getElementById("1").checked = true;
+    document.getElementById("2").checked = true;
+    document.getElementById("3").checked = true;
+    document.getElementById("4").checked = true;
+    document.getElementById("4.5").checked = true;
+    document.getElementById("5").checked = true;
+    document.getElementById("6").checked = true;
+    document.getElementById("7").checked = true;
+    document.getElementById("8").checked = true;
+    document.getElementById("9").checked = true;
+    document.getElementById("10").checked = true;
+    document.getElementById("11").checked = true;
+    document.getElementById("12").checked = true;
+    document.getElementById("13").checked = true;
+    document.getElementById("14").checked = true;
+    document.getElementById("15").checked = true;
+    document.getElementById("16").checked = true;
+    document.getElementById("17").checked = true;
+    document.getElementById("18").checked = true;
+    document.getElementById("19").checked = true;
+    document.getElementById("20").checked = true;
+    document.getElementById("21").checked = true;
+    document.getElementById("22").checked = true;
+    document.getElementById("23").checked = true;
+    document.getElementById("24").checked = true;
+    document.getElementById("25").checked = true;
+    document.getElementById("27").checked = true;
+  }
+
+  /* Close the dropdown if the user clicks outside of it */
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
+  function copyToClipboard() {
+    const summaryPanel = document.getElementById("summary");
+    const summaryText = summaryPanel.innerText;
+    // Create a temporary textarea element to copy the text to the clipboard
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = summaryText;
+    document.body.appendChild(tempTextArea);
+    // Select and copy the text to the clipboard
+    tempTextArea.select();
+    document.execCommand("copy");
+    // Remove the temporary textarea element
+    document.body.removeChild(tempTextArea);
+    // Provide feedback to the user (optional)
+    alert("Summary copied!");
+  }
+
+  function insulinAssessment() {
+    const insulinCheckbox = document.querySelector('input[value="onInsulin"]');
+    const insulinForm = document.getElementById("insulin-form");
+
+    insulinCheckbox.addEventListener("change", () => {
+      if (insulinCheckbox.checked) {
+        insulinForm.style.display = "block";
+      } else {
+        insulinForm.style.display = "none";
+      }
+    });
+  }
+
+  function EDAssessment() {
+    const EDCheckbox = document.querySelector('input[value="edAssessment"]');
+    const EDForm = document.getElementById("ed-form");
+
+    EDCheckbox.addEventListener("change", () => {
+      if (EDCheckbox.checked) {
+        EDForm.style.display = "block";
+      } else {
+        EDForm.style.display = "none";
+      }
+    });
+  }
+</script>

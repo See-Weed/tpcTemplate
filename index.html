@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clerking Template</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css\styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ff6242;
+      }
+
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> -->
+        <li>
+          <ul>
+            <li><a href="diabetes.html">Diabetes Follow Up</a></li>
+            <li><a href="asthmaFollowUp.html">Asthma Follow Up</a></li>
+            <li><a href="hypertension.html">HTN Follow Up</a></li>
+            <li><a href="ams.html">AMS</a></li>
+            <li><a href="pain.html">Pain Clinic</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <p></p>
+    <p></p><br>
+    <p></p><br>
+    <h1 style="color:whitesmoke;">Clinical Clerking Format</h1>
+    <br>
+    <h1 style="color:whitesmoke;">KK Salak</h1>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<script>
+
+  /* Close the dropdown if the user clicks outside of it */
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
+
+</script>
